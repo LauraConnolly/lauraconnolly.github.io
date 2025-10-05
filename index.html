@@ -8,24 +8,32 @@
 </head>
 <body>
 
-  <header>
-    <div class="header-container">
-      <div class="photo-container">
-        <img src="photos/laura.jpg" alt="Laura Connolly portrait" class="profile-photo" />
+  <aside class="sidebar">
+    <div class="sidebar-content">
+      <img src="photos/laura.jpg" alt="Laura Connolly portrait" class="profile-photo" />
+      <h1>Laura Connolly, Ph.D.</h1>
+      <p>Postdoctoral Fellow<br>Johns Hopkins University</p>
+
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#cv">CV</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="contact-mini">
+        <p><a href="mailto:lconnol8@jh.edu">lconnol8@jh.edu</a></p>
+        <p><a href="mailto:laura.connolly@queensu.ca">laura.connolly@queensu.ca</a></p>
       </div>
-      <div class="title-container">
-        <h1>Laura Connolly, Ph.D.</h1>
-        <p>Postdoctoral Fellow · Johns Hopkins University</p>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/laura-connolly-0aab43144/">LinkedIn</a> ·
+        <a href="https://scholar.google.com/citations?user=9E-xfIwAAAAJ&hl=en">Scholar</a> ·
+        <a href="https://github.com/lauraconnolly">GitHub</a>
       </div>
     </div>
 
-    <nav class="nav-links">
-      <a href="#about">About</a>
-      <a href="#cv">CV</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+  </aside>
 
   <main>
     <section id="about">
@@ -44,13 +52,11 @@
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>
-        📧 <a href="mailto:lconnol8@jh.edu">lconnol8@jh.edu</a><br>
-        📧 <a href="mailto:laura.connolly@queensu.ca">laura.connolly@queensu.ca</a>
+      <p>📧 <a href="mailto:lconnol8@jh.edu">lconnol8@jh.edu</a><br>
+         📧 <a href="mailto:laura.connolly@queensu.ca">laura.connolly@queensu.ca</a>
       </p>
       <p>
-        🔗 
-        <a href="https://www.linkedin.com/in/laura-connolly-0aab43144/">LinkedIn</a> |
+        🔗 <a href="https://www.linkedin.com/in/laura-connolly-0aab43144/">LinkedIn</a> |
         <a href="https://scholar.google.com/citations?user=9E-xfIwAAAAJ&hl=en">Google Scholar</a> |
         <a href="https://github.com/lauraconnolly">GitHub</a>
       </p>
@@ -63,8 +69,8 @@
 
   <script>
     const toggle = document.querySelector('.menu-toggle');
-    const nav = document.querySelector('.nav-links');
-    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+    const sidebar = document.querySelector('.sidebar');
+    toggle.addEventListener('click', () => sidebar.classList.toggle('open'));
   </script>
 
 </body>
