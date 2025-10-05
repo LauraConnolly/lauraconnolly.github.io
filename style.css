@@ -1,37 +1,35 @@
-/* Global styles */
+/* -------- Base -------- */
 body {
+  margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
   background-color: #0d1117;
   color: #e6edf3;
-  margin: 0;
   display: flex;
   min-height: 100vh;
 }
 
-/* Sidebar layout */
+/* -------- Sidebar -------- */
 .sidebar {
-  background-color: #161b22;
   width: 260px;
-  min-height: 100vh;
-  padding: 2rem 1rem;
-  box-sizing: border-box;
-  position: fixed;
-  left: 0;
-  top: 0;
+  background-color: #161b22;
+  color: #e6edf3;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   border-right: 1px solid #30363d;
-  transition: transform 0.3s ease;
-}
-
-.sidebar-content {
-  text-align: center;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .profile-photo {
-  width: 140px;
-  height: 140px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #58a6ff;
@@ -40,48 +38,47 @@ body {
 }
 
 .sidebar h1 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  text-align: center;
   margin: 0.5rem 0;
 }
 
 .sidebar p {
-  color: #9ba1a6;
   font-size: 0.95rem;
+  text-align: center;
+  color: #9ba1a6;
   margin-bottom: 1.2rem;
 }
 
 .nav-links {
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem;
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 
 .nav-links a {
-  color: #e6edf3;
-  text-decoration: none;
+  color: #58a6ff;
   font-weight: bold;
+  text-decoration: none;
 }
 .nav-links a:hover {
-  color: #58a6ff;
+  text-decoration: underline;
 }
 
 .contact-mini {
   font-size: 0.85rem;
-  line-height: 1.3;
+  text-align: center;
   margin-bottom: 1.5rem;
 }
 
-.social-links a {
-  color: #58a6ff;
+.social-links {
   font-size: 0.9rem;
-  text-decoration: none;
-}
-.social-links a:hover {
-  text-decoration: underline;
+  text-align: center;
+  color: #58a6ff;
 }
 
-/* Mobile menu button */
 .menu-toggle {
   display: none;
   position: absolute;
@@ -94,7 +91,7 @@ body {
   cursor: pointer;
 }
 
-/* Main content area */
+/* -------- Main Content -------- */
 main {
   margin-left: 260px;
   padding: 2rem 10%;
@@ -130,21 +127,21 @@ footer {
   font-size: 0.9rem;
 }
 
-/* 📱 Responsive Design */
+/* -------- Mobile -------- */
 @media (max-width: 800px) {
   body {
     flex-direction: column;
   }
 
   .sidebar {
+    width: 100%;
+    height: auto;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    min-height: auto;
-    padding: 1rem;
+    flex-direction: column;
     transform: translateY(-100%);
-    z-index: 1000;
+    padding: 1rem;
   }
 
   .sidebar.open {
@@ -161,7 +158,7 @@ footer {
 
   main {
     margin-left: 0;
-    padding: 6rem 1rem 2rem 1rem;
+    padding: 6rem 1rem 2rem;
   }
 
   section {
