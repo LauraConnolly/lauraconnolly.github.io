@@ -83,7 +83,6 @@ body {
 .social-links a svg {
   transition: transform 0.2s, fill 0.2s;
 }
-
 .social-links a:hover svg {
   transform: scale(1.2);
   fill: #9bbcfb;
@@ -107,9 +106,6 @@ main {
   padding: 2rem 10%;
   flex: 1;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 section {
@@ -118,9 +114,8 @@ section {
   padding: 2rem;
   border-radius: 12px;
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  text-align: center;
 }
 
 h2 {
@@ -131,14 +126,8 @@ h2 {
 
 h3 {
   color: #9bbcfb;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-p {
-  max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.6;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
 }
 
 a {
@@ -167,65 +156,43 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ---------- AWARDS ---------- */
-#awards ul {
-  list-style-type: none;
-  padding: 0;
-  text-align: left;
-  margin: 0 auto;
-  max-width: 700px;
-}
-
-#awards li {
-  margin: 0.4rem 0;
-  line-height: 1.4;
-}
-
-#awards h3 {
-  color: #9bbcfb;
-  margin-top: 1.2rem;
-  text-align: center;
-}
-
-/* ---------- HIGHLIGHTS & PROJECTS ---------- */
-.highlight-card, .project-card {
+/* ---------- HIGHLIGHTS ---------- */
+.highlight-card {
   background-color: #161b22;
   border: 1px solid #30363d;
   border-radius: 10px;
   padding: 1.2rem;
   margin: 1rem 0;
-  text-align: center;
+  text-align: left;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: border 0.3s ease, transform 0.2s ease;
 }
-
-.highlight-card:hover, .project-card:hover {
+.highlight-card:hover {
   border-color: #58a6ff;
   transform: translateY(-2px);
 }
 
-/* ---------- SOCIAL INLINE (Contact Section) ---------- */
-.social-inline {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-  flex-wrap: wrap;
+/* ---------- AWARDS ---------- */
+#awards .award-group {
+  margin-bottom: 2rem;
+  text-align: left;
 }
 
-.social-inline a {
+#awards ul {
+  list-style: none;
+  padding-left: 1.2rem;
+}
+#awards li {
+  position: relative;
+  padding-left: 0.5rem;
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+#awards li::before {
+  content: "•";
   color: #58a6ff;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: transform 0.2s, color 0.2s;
-}
-
-.social-inline a:hover {
-  transform: scale(1.1);
-  color: #9bbcfb;
+  position: absolute;
+  left: -0.8rem;
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -265,16 +232,4 @@ footer {
   section {
     padding: 1.2rem;
   }
-}
-
-/* ---------- SCROLLBAR (Dark Theme Polish) ---------- */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-thumb {
-  background-color: #30363d;
-  border-radius: 10px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #58a6ff;
 }
