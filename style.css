@@ -1,4 +1,4 @@
-/* -------- Base -------- */
+/* ---------- GLOBAL ---------- */
 body {
   margin: 0;
   font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -8,7 +8,7 @@ body {
   min-height: 100vh;
 }
 
-/* -------- Sidebar -------- */
+/* ---------- SIDEBAR ---------- */
 .sidebar {
   width: 260px;
   background-color: #161b22;
@@ -77,16 +77,16 @@ body {
   display: flex;
   gap: 1rem;
   justify-content: center;
+  margin-top: auto;
 }
 
-.social-links a {
-  color: #58a6ff;
-  font-size: 1.4rem;
-  text-decoration: none;
-  transition: transform 0.2s;
+.social-links a svg {
+  transition: transform 0.2s, fill 0.2s;
 }
-.social-links a:hover {
+
+.social-links a:hover svg {
   transform: scale(1.2);
+  fill: #9bbcfb;
 }
 
 .menu-toggle {
@@ -101,7 +101,7 @@ body {
   cursor: pointer;
 }
 
-/* -------- Main Content -------- */
+/* ---------- MAIN CONTENT ---------- */
 main {
   margin-left: 260px;
   padding: 2rem 10%;
@@ -126,11 +126,27 @@ section {
 h2 {
   color: #58a6ff;
   margin-bottom: 1rem;
+  text-align: center;
+}
+
+h3 {
+  color: #9bbcfb;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
   max-width: 700px;
   margin: 0 auto;
+  line-height: 1.6;
+}
+
+a {
+  color: #58a6ff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .button {
@@ -141,6 +157,7 @@ p {
   text-decoration: none;
   display: inline-block;
   margin-top: 1rem;
+  font-weight: bold;
 }
 
 footer {
@@ -150,11 +167,50 @@ footer {
   font-size: 0.9rem;
 }
 
+/* ---------- AWARDS ---------- */
+#awards ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+#awards li {
+  margin: 0.4rem 0;
+  line-height: 1.4;
+}
+
+#awards h3 {
+  color: #9bbcfb;
+  margin-top: 1.2rem;
+  text-align: center;
+}
+
+/* ---------- HIGHLIGHTS & PROJECTS ---------- */
+.highlight-card, .project-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 10px;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: border 0.3s ease, transform 0.2s ease;
+}
+
+.highlight-card:hover, .project-card:hover {
+  border-color: #58a6ff;
+  transform: translateY(-2px);
+}
+
+/* ---------- SOCIAL INLINE (Contact Section) ---------- */
 .social-inline {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   margin-top: 1rem;
+  flex-wrap: wrap;
 }
 
 .social-inline a {
@@ -164,13 +220,15 @@ footer {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  transition: transform 0.2s;
-}
-.social-inline a:hover {
-  transform: scale(1.1);
+  transition: transform 0.2s, color 0.2s;
 }
 
-/* -------- Mobile -------- */
+.social-inline a:hover {
+  transform: scale(1.1);
+  color: #9bbcfb;
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 800px) {
   body {
     flex-direction: column;
@@ -207,4 +265,16 @@ footer {
   section {
     padding: 1.2rem;
   }
+}
+
+/* ---------- SCROLLBAR (Dark Theme Polish) ---------- */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #30363d;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #58a6ff;
 }
