@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laura Connolly | Robotics & AI in Cancer Surgery</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <h1>Laura Connolly, Ph.D.</h1>
+      <p>Postdoctoral Fellow · Johns Hopkins University</p>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I’m a researcher in medical robotics and AI-driven surgical guidance, currently a Malone Postdoctoral Fellow at Johns Hopkins University.
+        My work focuses on integrating imaging, robotics, and intelligent systems for precision cancer surgery.
+      </p>
+    </section>
+
+    <!-- <section id="highlights">
+      <h2>Research Highlights</h2>
+      <ul>
+        <li><strong>ImSpect:</strong> Image-driven mass spectrometry for intraoperative margin evaluation (<em>Int J CARS 2024</em>)</li>
+        <li><strong>SlicerROS2:</strong> Open-source integration of 3D Slicer and ROS 2 for medical robots</li>
+      </ul>
+    </section> -->
+
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <p>You can download my full CV below:</p>
+      <a class="button" href="LauraConnolly_CV.pdf" target="_blank">📄 View CV</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>📧 <a href="mailto:lconnol8@jh.edu">lconnol8@jh.edu</a></p>
+      <p>🔗 <a href="hthttps://www.linkedin.com/in/laura-connolly-0aab43144/">LinkedIn</a> |
+         <a href="https://scholar.google.com/citations?user=9E-xfIwAAAAJ&hl=en">Google Scholar</a> |
+         <a href="https://github.com/lauraconnolly">GitHub</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Laura Connolly · Hosted on <a href="https://pages.github.com/">GitHub Pages</a></p>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => nav.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
