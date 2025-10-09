@@ -56,20 +56,30 @@ body {
   text-align: center;
 }
 
+/* Shared styles for thumbnails */
 .video-thumbnail,
 .gif-thumbnail {
   width: 100%;
-  max-width: 480px;
+  max-width: 320px;   /* ✅ Reduced from 480px to 320px for a tighter look */
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.25s ease;
-  image-rendering: auto; /* Keeps the image sharp */
+  image-rendering: auto; /* prevents pixelation */
 }
 
 .video-thumbnail:hover,
 .gif-thumbnail:hover {
   transform: scale(1.03);
 }
+
+/* Optional: center and limit on very small screens */
+@media (max-width: 600px) {
+  .video-thumbnail,
+  .gif-thumbnail {
+    max-width: 260px;
+  }
+}
+
 
 .nav-links {
   display: flex;
