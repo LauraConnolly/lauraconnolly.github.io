@@ -50,23 +50,26 @@ body {
   margin-bottom: 1.2rem;
 }
 
-.video-preview {
+.video-preview,
+.gif-preview {
   margin-top: 10px;
   text-align: center;
 }
 
-.video-thumbnail {
+.video-thumbnail,
+.gif-thumbnail {
   width: 100%;
   max-width: 480px;
-  border-radius: 8px;
+  border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  transition: transform 0.25s ease;
+  image-rendering: auto; /* Keeps the image sharp */
 }
 
-.video-thumbnail:hover {
+.video-thumbnail:hover,
+.gif-thumbnail:hover {
   transform: scale(1.03);
 }
-
 
 .nav-links {
   display: flex;
