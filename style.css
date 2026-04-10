@@ -60,26 +60,17 @@ body {
 .video-thumbnail,
 .gif-thumbnail {
   width: 100%;
-  max-width: 250px;   /* ✅ Reduced from 480px to 320px for a tighter look */
+  max-width: 250px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   transition: transform 0.25s ease;
-  image-rendering: auto; /* prevents pixelation */
+  image-rendering: auto;
 }
 
 .video-thumbnail:hover,
 .gif-thumbnail:hover {
   transform: scale(1.03);
 }
-
-/* Optional: center and limit on very small screens */
-@media (max-width: 600px) {
-  .video-thumbnail,
-  .gif-thumbnail {
-    max-width: 260px;
-  }
-}
-
 
 .nav-links {
   display: flex;
@@ -119,16 +110,23 @@ body {
   fill: #9bbcfb;
 }
 
+/* Toggle button — hidden on desktop, shown on mobile */
 .menu-toggle {
   display: none;
-  position: absolute;
+  position: fixed;
   top: 1rem;
-  right: 1rem;
-  background: none;
-  border: none;
+  left: 1rem;
+  background: #161b22;
+  border: 1px solid #30363d;
   color: #e6edf3;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
   cursor: pointer;
+  z-index: 1100;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ---------- MAIN CONTENT ---------- */
@@ -228,39 +226,66 @@ footer {
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 800px) {
+
   body {
     flex-direction: column;
   }
 
+  /* Sidebar slides in from the left as a drawer */
   .sidebar {
-    width: 100%;
-    height: auto;
+    width: 80vw;
+    max-width: 300px;
+    height: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    flex-direction: column;
-    transform: translateY(-100%);
-    padding: 1rem;
+    bottom: 0;
+    transform: translateX(-100%);
+    padding: 2rem 1.2rem;
+    overflow-y: auto;
   }
 
   .sidebar.open {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 
-  .menu-toggle {
-    display: block;
+  /* Dark overlay that appears behind the open sidebar */
+  .sidebar-overlay {
+    display: none;
     position: fixed;
-    top: 1rem;
-    right: 1rem;
-    z-index: 1100;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 999;
+  }
+  .sidebar-overlay.active {
+    display: block;
   }
 
+  /* Show the toggle button on mobile */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Main content fills the full width */
   main {
     margin-left: 0;
-    padding: 6rem 1rem 2rem;
+    padding: 5rem 1rem 2rem;
+    width: 100%;
   }
 
   section {
     padding: 1.2rem;
+    max-width: 100%;
+  }
+
+  /* Prevent images and iframes from overflowing */
+  img, iframe {
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  .video-thumbnail,
+  .gif-thumbnail {
+    max-width: 100%;
   }
 }
